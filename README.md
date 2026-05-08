@@ -37,6 +37,21 @@ make help   # 查看构建命令和章节命名规则
 
 本项目不提供 `make check` 或独立 stale 检测命令。文档 freshness 通过运行 `make` 保证。
 
+## 发布
+
+发布版本使用 SemVer 风格 tag：`vMAJOR.MINOR.PATCH`。
+
+自动发布通过创建并推送匹配 `v*.*.*` 的 tag 触发：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+手动发布可在 GitHub Actions 中运行 release workflow，并输入必填的 `release_tag`，例如 `v1.0.0`。
+
+`AGENTS.md` 是 release workflow 现场运行 `make` 构建的 Release asset，不需要提交到仓库。
+
 ## 维护章节
 
 添加章节：

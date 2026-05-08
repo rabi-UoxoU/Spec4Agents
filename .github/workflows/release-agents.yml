@@ -1,0 +1,55 @@
+name: Release AGENTS.md
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag to publish, for example v1.0.0'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve release tag
+        id: release
+        env:
+          RELEASE_TAG_INPUT: ${{ github.event.inputs.release_tag }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            release_tag="$RELEASE_TAG_INPUT"
+          else
+            release_tag="$GITHUB_REF_NAME"
+          fi
+
+          if ! [[ "$release_tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid release tag: $release_tag" >&2
+            exit 1
+          fi
+
+          echo "tag=$release_tag" >> "$GITHUB_OUTPUT"
+
+      - name: Build AGENTS.md
+        run: make
+
+      - name: Verify AGENTS.md
+        run: test -s AGENTS.md
+
+      - name: Create release and upload AGENTS.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md --target "$GITHUB_SHA"
+          else
+            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md
+          fi

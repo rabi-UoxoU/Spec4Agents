@@ -52,6 +52,8 @@ git push origin v1.0.0
 
 `AGENTS.md` 是 release workflow 现场运行 `make` 构建的 Release asset，不需要提交到仓库。
 
+Release 描述由 GitHub 自动生成，会包含相对上一版本的变更摘要和 Full Changelog 链接。
+
 ## 维护章节
 
 添加章节：

@@ -49,7 +49,7 @@ jobs:
           RELEASE_TAG: ${{ steps.release.outputs.tag }}
         run: |
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
-            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md --target "$GITHUB_SHA"
+            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md --title "$RELEASE_TAG" --generate-notes --target "$GITHUB_SHA"
           else
-            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md
+            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md --title "$RELEASE_TAG" --generate-notes
           fi

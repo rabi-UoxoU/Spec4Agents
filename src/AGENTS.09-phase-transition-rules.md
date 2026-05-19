@@ -26,7 +26,7 @@ _需求引用: 8.1, 8.2, 8.4_
 **示例停止消息**：
 
 ```
-需求文档已完成，保存在 .agent/specs/user-authentication/requirements.md。
+需求文档已完成，保存在 .agents/specs/user-authentication/requirements.md。
 
 文档包含以下内容：
 - 术语表（5 个术语）

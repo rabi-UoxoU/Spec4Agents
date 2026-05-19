@@ -1,24 +1,24 @@
-# 参考资料（外部文档）
-ref/
+# Reference materials (external docs)
+references/
 
-# Kiro spec 目录
+# Kiro spec directory
 .kiro/
 
-# 通用代理 spec 目录
-.agent/
+# Generic agent spec directory
+.agents/
 
-# 生成的文档（从 src/ 构建）
+# Generated document (built from src)
 AGENTS.md
 
 # Node modules
 node_modules/
 
-# 环境变量
+# Environment variables
 .env
 .env.local
 .env.*.local
 
-# IDE 和编辑器文件
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
@@ -26,23 +26,23 @@ node_modules/
 *~
 .DS_Store
 
-# 操作系统文件
+# Operating system files
 Thumbs.db
 desktop.ini
 
-# 日志文件
+# Log files
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# 构建输出
+# Build outputs
 dist/
 build/
 out/
 *.js.map
 
-# 临时文件
+# Temporary files
 tmp/
 temp/
 *.tmp

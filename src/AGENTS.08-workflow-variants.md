@@ -54,8 +54,8 @@ graph LR
 **步骤 1：初始化 spec 目录**
 
 ```bash
-mkdir -p .agent/specs/{feature-name}
-cd .agent/specs/{feature-name}
+mkdir -p .agents/specs/{feature-name}
+cd .agents/specs/{feature-name}
 ```
 
 创建 `.config.agent`：
@@ -387,7 +387,7 @@ Requirements-First 工作流的阶段转换遵循以下规则：
 用户：支持用户名/密码登录，不需要多因素认证，需要账户锁定机制。
 
 [阶段 1：需求]
-代理：[创建 .agent/specs/user-authentication/ 目录和 .config.agent]
+代理：[创建 .agents/specs/user-authentication/ 目录和 .config.agent]
 代理：[编写 requirements.md，包含术语表、用户故事和验收标准]
 代理：需求文档已完成，请审阅：
      [展示 requirements.md 内容]
@@ -477,7 +477,7 @@ graph LR
 **步骤 1：初始化 spec 目录**
 
 ```bash
-mkdir -p .agent/specs/{feature-name}
+mkdir -p .agents/specs/{feature-name}
 ```
 
 创建 `.config.agent` 文件：
@@ -728,7 +728,7 @@ stateDiagram-v2
 用户：主要是用户资料查询太慢，读写比约 10:1，需要最终一致性，已有 Redis 集群。
 
 [阶段 1：设计]
-代理：[创建 .agent/specs/cache-layer-refactor/ 目录和 .config.agent]
+代理：[创建 .agents/specs/cache-layer-refactor/ 目录和 .config.agent]
 代理：[编写 design.md，包含缓存架构图、CacheService 接口、序列图和正确性属性]
 代理：设计文档已完成，请审阅：
      [展示 design.md 内容]
@@ -869,7 +869,7 @@ Bug condition 方法论通过精确定义"什么是 bug"和"什么不是 bug"，
 Bugfix spec 使用与 feature spec 相同的目录结构，但文件内容有所不同：
 
 ```
-.agent/specs/{bug-name}/
+.agents/specs/{bug-name}/
 ├── .config.agent          # specType 为 "bugfix"，无 workflowType
 ├── requirements.md        # 包含 bug condition 分析（三个维度）
 ├── design.md              # 修复方案设计
@@ -1028,7 +1028,7 @@ graph LR
 创建 spec 目录和配置文件，然后编写包含 bug condition 分析的 `requirements.md`：
 
 ```bash
-mkdir -p .agent/specs/{bug-name}
+mkdir -p .agents/specs/{bug-name}
 ```
 
 `.config.agent`：
@@ -1219,7 +1219,7 @@ Bug 分析文档已完成，请审阅 requirements.md：
      不变行为：普通密码登录、账户锁定机制、session 创建等必须继续正常工作
 
 [步骤 3：编写 requirements.md]
-代理：[创建 .agent/specs/fix-login-sql-injection/ 目录]
+代理：[创建 .agents/specs/fix-login-sql-injection/ 目录]
 代理：[编写 requirements.md，包含完整的 bug condition 分析]
 代理：Bug 分析文档已完成，请审阅：
 

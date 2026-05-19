@@ -25,10 +25,10 @@
 
 ```bash
 # 创建 spec 目录
-mkdir -p .agent/specs/user-authentication
+mkdir -p .agents/specs/user-authentication
 
 # 进入目录
-cd .agent/specs/user-authentication
+cd .agents/specs/user-authentication
 ```
 
 #### 步骤 3：创建必需文件
@@ -111,13 +111,13 @@ touch tasks.md
 
 ```bash
 # 从项目根目录运行
-tree .agent/specs/user-authentication
+tree .agents/specs/user-authentication
 ```
 
 你应该看到：
 
 ```
-.agent/specs/user-authentication/
+.agents/specs/user-authentication/
 ├── .config.agent
 ├── requirements.md
 ├── design.md
@@ -132,7 +132,7 @@ tree .agent/specs/user-authentication
 
 ```
 my-project/                          # 项目根目录
-├── .agent/                          # 通用代理的工作空间
+├── .agents/                          # 通用代理的工作空间
 │   └── specs/                       # 所有 spec 的容器
 │       ├── user-authentication/     # Spec 1: 用户认证
 │       │   ├── .config.agent
@@ -153,7 +153,7 @@ my-project/                          # 项目根目录
 │           └── tasks.md
 │
 ├── .kiro/                           # Kiro 的工作空间（如果使用 Kiro）
-│   └── specs/                       # Kiro 管理的 spec（独立于 .agent）
+│   └── specs/                       # Kiro 管理的 spec（独立于 .agents）
 │       └── another-feature/
 │           ├── .config.kiro
 │           ├── requirements.md
@@ -174,7 +174,7 @@ my-project/                          # 项目根目录
 
 **关键观察**：
 
-1. **隔离性**：`.agent` 和 `.kiro` 目录完全独立
+1. **隔离性**：`.agents` 和 `.kiro` 目录完全独立
 2. **一致性**：每个 spec 都有相同的四个文件
 3. **命名规范**：所有 spec 目录都使用 kebab-case
 4. **清晰性**：目录名称清楚地描述了功能或 bug

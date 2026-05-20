@@ -4,6 +4,14 @@
 
 本项目使用通用的`.agents`目录存放spec文件，和`.kiro`目录相互独立。
 
+## 快速开始
+
+使用wget从Release下载最新构建版本的AGENTS.md，将其放置在开发项目根目录，然后启动Coding Agent，描述需求时提及“创建spec”即可。
+
+```bash
+wget https://github.com/rabi-UoxoU/Spec4Agents/releases/latest/download/AGENTS.md
+```
+
 ## 项目结构
 
 因开发需要，文档的章节源代码位于`src/`目录，文件名格式为`AGENTS.XX-YYYYYY.md`。

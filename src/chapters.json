@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "title": "Spec 工作流指南",
+  "chapters": [
+    {
+      "id": "introduction",
+      "source": "introduction.md",
+      "title": "介绍"
+    },
+    {
+      "id": "quick-start",
+      "source": "quick-start.md",
+      "title": "快速开始"
+    },
+    {
+      "id": "directory-structure-and-configuration",
+      "source": "directory-structure-and-configuration.md",
+      "title": "目录结构和配置"
+    },
+    {
+      "id": "requirements-phase",
+      "source": "requirements-phase.md",
+      "title": "需求阶段"
+    },
+    {
+      "id": "design-phase",
+      "source": "design-phase.md",
+      "title": "设计阶段"
+    },
+    {
+      "id": "tasks-phase",
+      "source": "tasks-phase.md",
+      "title": "任务阶段"
+    },
+    {
+      "id": "property-based-testing-guide",
+      "source": "property-based-testing-guide.md",
+      "title": "属性测试指南"
+    },
+    {
+      "id": "workflow-variants",
+      "source": "workflow-variants.md",
+      "title": "工作流变体"
+    },
+    {
+      "id": "phase-transition-rules",
+      "source": "phase-transition-rules.md",
+      "title": "阶段转换规则"
+    },
+    {
+      "id": "best-practices",
+      "source": "best-practices.md",
+      "title": "最佳实践"
+    },
+    {
+      "id": "faq",
+      "source": "faq.md",
+      "title": "常见问题"
+    },
+    {
+      "id": "reference",
+      "source": "reference.md",
+      "title": "参考"
+    }
+  ]
+}

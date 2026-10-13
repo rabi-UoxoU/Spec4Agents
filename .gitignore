@@ -1,9 +1,6 @@
 # Reference materials (external docs)
 references/
 
-# Kiro spec directory
-.kiro/
-
 # Generic agent spec directory
 .agents/
 

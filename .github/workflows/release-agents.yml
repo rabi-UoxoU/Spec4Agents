@@ -1,4 +1,4 @@
-name: Release AGENTS.md
+name: Release Spec4Agents
 
 on:
   push:
@@ -37,19 +37,16 @@ jobs:
 
           echo "tag=$release_tag" >> "$GITHUB_OUTPUT"
 
-      - name: Build AGENTS.md
-        run: make
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
 
-      - name: Verify AGENTS.md
-        run: test -s AGENTS.md
+      - name: Install locked dependencies
+        run: npm ci
 
-      - name: Create release and upload AGENTS.md
+      - name: Check, test, build, verify and publish both assets
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.release.outputs.tag }}
-        run: |
-          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
-            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md --title "$RELEASE_TAG" --generate-notes --target "$GITHUB_SHA"
-          else
-            gh release create "$RELEASE_TAG" AGENTS.md#AGENTS.md --title "$RELEASE_TAG" --generate-notes
-          fi
+        run: bash scripts/release.sh
